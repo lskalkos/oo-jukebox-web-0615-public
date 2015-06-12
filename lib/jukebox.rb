@@ -15,16 +15,10 @@ class Jukebox
   end
 
   def list
-    # @songs.each{|song| puts "#{song}"}
     puts @songs
   end
 
   def play(selection="default")
-
-    # puts "What song would you like to listen to?"
-
-    # selection = self.gets
-    # selection = "default" if selection.empty?
 
    song = if selection == "default"
       choice = self.gets
@@ -39,20 +33,6 @@ class Jukebox
     else
       selection      
     end
-
-    # if selection == "default"
-    #   @songs[0]
-    # elsif selection.to_i.to_s == selection
-    #   @songs[selection.to_i-1]
-    # else
-    #   selection
-    # end    
-
-    # song = if selection.to_i.to_s == selection
-    #   @songs[selection.to_i-1]
-    # else
-    #   selection
-    # end
 
     puts "Now Playing: #{song}"
 
