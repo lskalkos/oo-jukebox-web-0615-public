@@ -65,13 +65,9 @@ class Jukebox
   def call
 
     input = self.gets
-
     command = input.split(" ").first
     options = input.scan(/\s.+$/)
-
-    option = if options.length >= 1
-      options.first.slice(1, options.first.length)
-    end
+    options.length >= 1 ? option = options.first.slice(1, options.first.length) : nil
 
     case command
     when "help" 
@@ -79,11 +75,7 @@ class Jukebox
     when "list"
       list
     when "play"
-      if option
-        play(option)
-      else
-        play
-      end
+      option ? play(option) : play
     when "exit"
       exit
     end
